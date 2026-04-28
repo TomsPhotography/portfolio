@@ -6,47 +6,129 @@
   <title>Toms Photography</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0a0a0a;
+      background:
+        radial-gradient(circle at top left, rgba(120, 90, 60, 0.22), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08), transparent 30%),
+        #080808;
       color: white;
     }
 
-    header {
-      text-align: center;
-      padding: 110px 20px 70px;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 40px;
+      position: sticky;
+      top: 0;
+      background: rgba(8, 8, 8, 0.78);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    header h1 {
-      font-size: 46px;
-      margin-bottom: 12px;
+    nav .logo {
+      font-weight: 700;
       letter-spacing: 1px;
     }
 
-    header p {
-      opacity: 0.65;
-      font-size: 17px;
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      opacity: 0.75;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    header {
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      opacity: 0.55;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1;
+      margin: 0 0 22px;
+    }
+
+    .hero p {
+      opacity: 0.72;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 34px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.25s ease;
+    }
+
+    .button:hover {
+      background: white;
+      color: black;
+    }
+
+    section {
+      padding: 80px 40px;
+    }
+
+    .section-header {
+      max-width: 900px;
+      margin: 0 auto 38px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+    }
+
+    .section-header h2 {
+      font-size: 34px;
       margin: 0;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 26px;
-      margin: 20px 0 10px;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      opacity: 0.55;
-      margin-bottom: 35px;
+    .section-header p {
+      margin: 0;
+      opacity: 0.6;
+      max-width: 380px;
+      line-height: 1.6;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-      padding: 30px 40px 80px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
       max-width: 1200px;
       margin: auto;
     }
@@ -55,57 +137,78 @@
       width: 100%;
       height: 360px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 14px;
       transition: transform 0.3s ease, opacity 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .gallery img:hover {
-      transform: scale(1.03);
-      opacity: 0.9;
+      transform: scale(1.025);
+      opacity: 0.88;
     }
 
-    .about, .contact {
-      padding: 70px 20px;
-      max-width: 680px;
+    .about-preview {
+      max-width: 760px;
       margin: auto;
       text-align: center;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 22px;
+      padding: 46px 32px;
     }
 
-    .about h2, .contact h2 {
-      font-size: 30px;
-      margin-bottom: 18px;
+    .about-preview h2 {
+      font-size: 32px;
+      margin-top: 0;
     }
 
-    .about p, .contact p {
+    .about-preview p {
       opacity: 0.75;
-      line-height: 1.7;
+      line-height: 1.8;
       font-size: 17px;
-    }
-
-    .contact a {
-      color: white;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.5);
     }
 
     footer {
       text-align: center;
-      padding: 40px 20px;
-      opacity: 0.45;
+      padding: 45px 20px;
+      opacity: 0.5;
       font-size: 14px;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    @media (max-width: 700px) {
-      header h1 {
-        font-size: 36px;
+    footer a {
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-header {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 20px;
+      }
+
+      nav a {
+        margin-left: 12px;
+      }
+
+      section {
+        padding: 60px 20px;
       }
 
       .gallery {
-        padding: 25px 20px 60px;
+        grid-template-columns: 1fr;
       }
 
       .gallery img {
-        height: 300px;
+        height: 340px;
       }
     }
   </style>
@@ -113,14 +216,32 @@
 
 <body>
 
+<nav>
+  <div class="logo">Toms Photography</div>
+  <div>
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
 <header>
-  <h1>Toms Photography</h1>
-  <p>Real moments. Clean edits. Honest storytelling.</p>
+  <div class="hero">
+    <div class="eyebrow">Arizona Photography</div>
+    <h1>Real moments, cleanly captured.</h1>
+    <p>
+      A growing photography portfolio focused on candid moments, natural emotion,
+      and clean edits that enhance the photo without making it feel artificial.
+    </p>
+    <a class="button" href="contact.html">Work with me</a>
+  </div>
 </header>
 
 <section>
-  <h2 class="section-title">Featured Work</h2>
-  <p class="section-subtitle">A small collection of images as I build my portfolio.</p>
+  <div class="section-header">
+    <h2>Featured Work</h2>
+    <p>A small but intentional collection of images as I build my professional portfolio.</p>
+  </div>
 
   <div class="gallery">
     <img src="photo1.JPG" alt="Event photography sample">
@@ -130,24 +251,21 @@
   </div>
 </section>
 
-<section class="about">
-  <h2>About</h2>
-  <p>
-    I’m building a photography style around candid, natural moments — the kind of images that feel real instead of overly posed. My goal is to capture people as they are, then use clean editing to enhance the moment without making it feel artificial.
-  </p>
-</section>
-
-<section class="contact">
-  <h2>Contact</h2>
-  <p>
-    Available for portraits, events, and creative shoots.
-    <br><br>
-    <a href="mailto:neiltoms485@gmail.com">neiltoms485@gmail.com</a>
-  </p>
+<section>
+  <div class="about-preview">
+    <h2>My style</h2>
+    <p>
+      I’m drawn to photos that feel honest — the in-between moments, natural reactions,
+      and quiet details that make a scene feel real. My goal is simple: capture people
+      as they are, then edit with intention.
+    </p>
+    <br>
+    <a class="button" href="about.html">Read more</a>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 Toms Photography</p>
+  <p>© 2026 Toms Photography · <a href="mailto:tomsphotography.az@gmail.com">tomsphotography.az@gmail.com</a></p>
 </footer>
 
 </body>
