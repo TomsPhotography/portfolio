@@ -6,98 +6,148 @@
   <title>Toms Photography</title>
 
   <style>
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #0a0a0a;
-    color: white;
-  }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0a0a0a;
+      color: white;
+    }
 
-  header {
-    text-align: center;
-    padding: 100px 20px 60px;
-  }
+    header {
+      text-align: center;
+      padding: 110px 20px 70px;
+    }
 
-  header h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-  }
+    header h1 {
+      font-size: 46px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
 
-  header p {
-    opacity: 0.6;
-    font-size: 16px;
-  }
+    header p {
+      opacity: 0.65;
+      font-size: 17px;
+      margin: 0;
+    }
 
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 40px 40px 80px;
-    max-width: 1200px;
-    margin: auto;
-  }
+    .section-title {
+      text-align: center;
+      font-size: 26px;
+      margin: 20px 0 10px;
+    }
 
-  .gallery img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 6px;
-    transition: transform 0.3s ease;
-  }
+    .section-subtitle {
+      text-align: center;
+      opacity: 0.55;
+      margin-bottom: 35px;
+    }
 
-  .gallery img:hover {
-    transform: scale(1.03);
-  }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      padding: 30px 40px 80px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-  .about {
-    padding: 60px 20px;
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-  }
+    .gallery img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
 
-  .about h2 {
-    margin-bottom: 15px;
-  }
+    .gallery img:hover {
+      transform: scale(1.03);
+      opacity: 0.9;
+    }
 
-  .about p {
-    opacity: 0.7;
-    line-height: 1.6;
-  }
+    .about, .contact {
+      padding: 70px 20px;
+      max-width: 680px;
+      margin: auto;
+      text-align: center;
+    }
 
-  footer {
-    text-align: center;
-    padding: 40px;
-    opacity: 0.5;
-    font-size: 14px;
-  }
-</style>
+    .about h2, .contact h2 {
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+
+    .about p, .contact p {
+      opacity: 0.75;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .contact a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      opacity: 0.45;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 36px;
+      }
+
+      .gallery {
+        padding: 25px 20px 60px;
+      }
+
+      .gallery img {
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
   <h1>Toms Photography</h1>
-  <p>Capturing real moments.</p>
+  <p>Real moments. Clean edits. Honest storytelling.</p>
 </header>
 
-<section class="gallery">
-  <img src="photo1.JPG">
-  <img src="photo2.JPG">
-  <img src="photo3.JPG">
-  <img src="photo4.JPG">
+<section>
+  <h2 class="section-title">Featured Work</h2>
+  <p class="section-subtitle">A small collection of images as I build my portfolio.</p>
+
+  <div class="gallery">
+    <img src="photo1.JPG" alt="Event photography sample">
+    <img src="photo2.JPG" alt="Event photography sample">
+    <img src="photo3.JPG" alt="Portrait photography sample">
+    <img src="photo4.JPG" alt="Portrait photography sample">
+  </div>
 </section>
 
 <section class="about">
   <h2>About</h2>
   <p>
-    I focus on capturing real, unposed moments. My goal is to create images that feel natural, not forced.
+    I’m building a photography style around candid, natural moments — the kind of images that feel real instead of overly posed. My goal is to capture people as they are, then use clean editing to enhance the moment without making it feel artificial.
+  </p>
+</section>
+
+<section class="contact">
+  <h2>Contact</h2>
+  <p>
+    Available for portraits, events, and creative shoots.
+    <br><br>
+    <a href="mailto:neiltoms485@gmail.com">neiltoms485@gmail.com</a>
   </p>
 </section>
 
 <footer>
-  <p>Contact: neiltoms485@gmail.com</p>
+  <p>© 2026 Toms Photography</p>
 </footer>
 
 </body>
