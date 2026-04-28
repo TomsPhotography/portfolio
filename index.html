@@ -148,32 +148,30 @@
     }
 
     .gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  column-count: 3;
+  column-gap: 20px;
   max-width: 1200px;
   margin: auto;
 }
 
-.gallery a.featured {
-  grid-column: span 2;
-  grid-row: span 2;
+.gallery a {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-    .gallery img {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 16px 35px rgba(0,0,0,0.10);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background: white;
-    }
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 16px 35px rgba(0,0,0,0.10);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .gallery img:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 22px 45px rgba(0,0,0,0.16);
-    }
+.gallery img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 45px rgba(0,0,0,0.16);
+}
 
     .about-card {
       max-width: 780px;
