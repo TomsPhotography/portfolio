@@ -6,53 +6,73 @@
   <title>Toms Photography</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0a0a0a;
-      color: white;
-    }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0a0a0a;
+    color: white;
+  }
 
-    header {
-      text-align: center;
-      padding: 60px 20px;
-    }
+  header {
+    text-align: center;
+    padding: 100px 20px 60px;
+  }
 
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+  header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
 
-    header p {
-      opacity: 0.7;
-    }
+  header p {
+    opacity: 0.6;
+    font-size: 16px;
+  }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 10px;
-      padding: 20px;
-    }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px 40px 80px;
+    max-width: 1200px;
+    margin: auto;
+  }
 
-    .gallery img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+  .gallery img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+  }
 
-    .about {
-      padding: 40px 20px;
-      max-width: 600px;
-      margin: auto;
-      text-align: center;
-    }
+  .gallery img:hover {
+    transform: scale(1.03);
+  }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      opacity: 0.6;
-    }
-  </style>
+  .about {
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .about h2 {
+    margin-bottom: 15px;
+  }
+
+  .about p {
+    opacity: 0.7;
+    line-height: 1.6;
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.5;
+    font-size: 14px;
+  }
+</style>
 </head>
 
 <body>
