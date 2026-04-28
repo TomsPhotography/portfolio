@@ -148,12 +148,17 @@
     }
 
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.gallery a.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
 
     .gallery img {
       width: 100%;
@@ -311,7 +316,8 @@
   </div>
 
   <div class="gallery">
-  <a href="Ross.JPG"><img src="Ross.JPG"></a>
+  <a class="featured" href="Ross.JPG"><img src="Ross.JPG"></a>
+
   <a href="David.JPG"><img src="David.JPG"></a>
   <a href="Neveah.JPG"><img src="Neveah.JPG"></a>
   <a href="Reagan.JPG"><img src="Reagan.JPG"></a>
