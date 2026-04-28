@@ -14,36 +14,46 @@
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(120, 90, 60, 0.22), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08), transparent 30%),
-        #080808;
-      color: white;
+        radial-gradient(circle at top left, rgba(255, 226, 196, 0.75), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(210, 230, 255, 0.65), transparent 30%),
+        #f7f7f2;
+      color: #111;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 40px;
+      padding: 18px 34px;
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
       position: sticky;
       top: 0;
-      background: rgba(8, 8, 8, 0.78);
-      backdrop-filter: blur(12px);
       z-index: 10;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    nav .logo {
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      border-radius: 50%;
     }
 
     nav a {
-      color: white;
+      color: #111;
       text-decoration: none;
-      margin-left: 22px;
-      opacity: 0.75;
+      margin-left: 20px;
       font-size: 14px;
+      opacity: 0.7;
     }
 
     nav a:hover {
@@ -51,66 +61,78 @@
     }
 
     header {
-      min-height: 72vh;
+      min-height: 68vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 80px 20px;
+      padding: 80px 22px 60px;
     }
 
     .hero {
-      max-width: 760px;
+      max-width: 780px;
+    }
+
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 50%;
+      margin-bottom: 24px;
+      background: white;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
     }
 
     .eyebrow {
       text-transform: uppercase;
       letter-spacing: 3px;
       font-size: 12px;
-      opacity: 0.55;
+      color: #777;
       margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(42px, 7vw, 78px);
+      font-size: clamp(42px, 7vw, 76px);
       line-height: 1;
       margin: 0 0 22px;
     }
 
     .hero p {
-      opacity: 0.72;
+      color: #4a4a4a;
       font-size: 18px;
       line-height: 1.7;
-      margin-bottom: 34px;
+      margin: 0 auto 32px;
+      max-width: 650px;
     }
 
     .button {
       display: inline-block;
       padding: 13px 22px;
-      border: 1px solid rgba(255,255,255,0.35);
+      border: 1px solid rgba(0,0,0,0.18);
       border-radius: 999px;
-      color: white;
+      color: #111;
       text-decoration: none;
       font-size: 14px;
+      background: rgba(255,255,255,0.55);
       transition: 0.25s ease;
     }
 
     .button:hover {
-      background: white;
-      color: black;
+      background: #111;
+      color: white;
     }
 
     section {
-      padding: 80px 40px;
+      padding: 75px 38px;
     }
 
     .section-header {
-      max-width: 900px;
-      margin: 0 auto 38px;
+      max-width: 1100px;
+      margin: 0 auto 36px;
       display: flex;
       justify-content: space-between;
-      gap: 20px;
       align-items: end;
+      gap: 20px;
     }
 
     .section-header h2 {
@@ -119,16 +141,16 @@
     }
 
     .section-header p {
+      color: #666;
       margin: 0;
-      opacity: 0.6;
-      max-width: 380px;
+      max-width: 420px;
       line-height: 1.6;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 20px;
       max-width: 1200px;
       margin: auto;
     }
@@ -137,50 +159,75 @@
       width: 100%;
       height: 360px;
       object-fit: cover;
-      border-radius: 14px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.10);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: white;
     }
 
     .gallery img:hover {
-      transform: scale(1.025);
-      opacity: 0.88;
+      transform: translateY(-5px);
+      box-shadow: 0 22px 45px rgba(0,0,0,0.16);
     }
 
-    .about-preview {
-      max-width: 760px;
+    .about-card {
+      max-width: 780px;
       margin: auto;
       text-align: center;
-      background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 22px;
-      padding: 46px 32px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 26px;
+      padding: 48px 34px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.06);
     }
 
-    .about-preview h2 {
+    .about-card h2 {
       font-size: 32px;
       margin-top: 0;
     }
 
-    .about-preview p {
-      opacity: 0.75;
+    .about-card p {
+      color: #444;
       line-height: 1.8;
       font-size: 17px;
     }
 
+    .contact-card {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+      background: #111;
+      color: white;
+      border-radius: 26px;
+      padding: 48px 30px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.13);
+    }
+
+    .contact-card h2 {
+      font-size: 32px;
+      margin-top: 0;
+    }
+
+    .contact-card p {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .contact-card a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.45);
+    }
+
     footer {
       text-align: center;
-      padding: 45px 20px;
-      opacity: 0.5;
+      padding: 38px 20px;
+      color: #777;
       font-size: 14px;
-      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    footer a {
-      color: white;
-    }
-
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
       .gallery {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -188,11 +235,19 @@
       .section-header {
         display: block;
       }
+
+      .section-header p {
+        margin-top: 10px;
+      }
     }
 
     @media (max-width: 600px) {
       nav {
-        padding: 20px;
+        padding: 16px 20px;
+      }
+
+      .brand span {
+        display: none;
       }
 
       nav a {
@@ -208,7 +263,12 @@
       }
 
       .gallery img {
-        height: 340px;
+        height: 330px;
+      }
+
+      .hero-logo {
+        width: 100px;
+        height: 100px;
       }
     }
   </style>
@@ -217,30 +277,37 @@
 <body>
 
 <nav>
-  <div class="logo">Toms Photography</div>
+  <div class="brand">
+    <img src="logo.PNG" alt="Toms Photography logo">
+    <span>Toms Photography</span>
+  </div>
+
   <div>
-    <a href="index.html">Work</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <header>
   <div class="hero">
-    <div class="eyebrow">Arizona Photography</div>
+    <img class="hero-logo" src="logo.PNG" alt="Toms Photography logo">
+    <div class="eyebrow">Candid • Event • Portrait Photography</div>
     <h1>Real moments, cleanly captured.</h1>
     <p>
-      A growing photography portfolio focused on candid moments, natural emotion,
+      A growing photography portfolio focused on natural expression, honest moments,
       and clean edits that enhance the photo without making it feel artificial.
     </p>
-    <a class="button" href="contact.html">Work with me</a>
+    <a class="button" href="#work">View featured work</a>
   </div>
 </header>
 
-<section>
+<section id="work">
   <div class="section-header">
     <h2>Featured Work</h2>
-    <p>A small but intentional collection of images as I build my professional portfolio.</p>
+    <p>
+      A small but intentional collection of images as I build my professional portfolio.
+    </p>
   </div>
 
   <div class="gallery">
@@ -251,21 +318,30 @@
   </div>
 </section>
 
-<section>
-  <div class="about-preview">
-    <h2>My style</h2>
+<section id="about">
+  <div class="about-card">
+    <h2>My Style</h2>
     <p>
       I’m drawn to photos that feel honest — the in-between moments, natural reactions,
       and quiet details that make a scene feel real. My goal is simple: capture people
       as they are, then edit with intention.
     </p>
-    <br>
-    <a class="button" href="about.html">Read more</a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-card">
+    <h2>Let’s Work Together</h2>
+    <p>
+      Available for portraits, events, and creative shoots.
+      <br><br>
+      <a href="mailto:tomsphotography.az@gmail.com">tomsphotography.az@gmail.com</a>
+    </p>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Toms Photography · <a href="mailto:tomsphotography.az@gmail.com">tomsphotography.az@gmail.com</a></p>
+  <p>© 2026 Toms Photography · A legacy behind the lens</p>
 </footer>
 
 </body>
